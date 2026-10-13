@@ -83,7 +83,14 @@ function NotesContextProvider({ children }) {
     },
   ]);
 
-  const addNote = (newNote) => {
+  const addNote = ({ title, description }) => {
+    const newNote = {
+      id: Date.now(),
+      title,
+      description,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
     setNotes((prevNotes) => [...prevNotes, newNote]);
   };
 

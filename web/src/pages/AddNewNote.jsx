@@ -3,13 +3,15 @@ import Header from "../ui/Header";
 import Input from "../ui/Input";
 import TextArea from "../ui/TextArea";
 import { useNavigate } from "react-router-dom";
+import { NotesContext } from "../context/NotesContext";
 function AddNewNote() {
   const navigate = useNavigate();
+  const { addNote } = React.useContext(NotesContext);
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     const form = new FormData(e.target);
-    console.log("Form Data:", Object.fromEntries(form.entries()));
+    const { title, description } = Object.fromEntries(form.entries());
+    addNote({ title, description });
     navigate("/", { replace: true });
   };
   return (

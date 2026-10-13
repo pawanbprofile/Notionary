@@ -12,6 +12,7 @@ function Home() {
         {notes.map((note) => (
           <Note
             key={note.id}
+            id={note.id}
             title={note.title}
             description={note.description}
             created_at={note.created_at}
