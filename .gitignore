@@ -1,0 +1,12 @@
+# Ignore specific folders inside web
+/web/node_modules/
+/web/dist/
+
+# Ignore a specific file
+/web/.env
+
+# Ignore all .log files anywhere in the repository
+*.log
+
+# Ignore every .env file in any directory
+.env
